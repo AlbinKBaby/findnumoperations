@@ -27,9 +27,13 @@ button{
    margin-left: 40%;
 }
 p{
-    margin-top: 12px;
-    margin: 5px 5% 5px 5% ;
+    
+    margin: 20px 5% 5px 5% ;
     height: 250px;
     width: 350px;
-    
+    font-weight: bolder;
+    font-size: x-large;
+    color: rgb(141, 141, 77);
+    text-align: center;
+      
 }

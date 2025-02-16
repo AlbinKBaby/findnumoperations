@@ -73,24 +73,23 @@
                     }
                 }
                 function numArm(num) {
-
                     let sum = 0;
                     let tempArm = num;
-                    while (tempArm > 0) {
+
+                    while (tempArm>0) {
                         let n = tempArm % 10;
-                        let rev = Math.pow(num, 3);
-                        sum = sum + rev;
+                        
+                        sum = sum+ Math.pow(n, 3);
+                       
+                        tempArm = Math.floor(tempArm / 10);
+                       
                     }
-                    if (sum === num) {
-                        alert("hi")
-                        // return  `${num} is Armstrong`
+                   
+                    if(num==sum){
+                        return `${num} is an Armstrong number`;
+                    } else {
+                        return `${num} is not an Armstrong number`;
                     }
-                    else {
-                        alert("hlo")
-                        // return `${num} is not  Armstrong`
-
-                    }
-
                 }
             }
         </script>
