@@ -20,20 +20,62 @@
                         <input type="number" id="userInput" class="form-control" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-default" placeholder="Enter the Number">
                     </div>
-                    <select class="options" id="cars">
-                        <option value="Fibonacci sequence">Fibonacci sequence</option>
+                    <select class="options" id="dropDown">
+                        <option value="Fibonacci">Fibonacci sequence</option>
                         <option value="Palindrome">Palindrome</option>
                         <option value="Armstrong">Armstrong</option>
                     </select>
-                    <button onclick="findResult()">Find</button>
+                    <button class="btn btn-primary mt-4 " onclick="findResult()">Find</button>
                     <p id="result"></p>
                 </div>
-               
+
                 <div class="col-md-3"></div>
             </div>
         </div>
         <script>
+            function findResult() {
 
+                let num = userInput.value;
+                let option = dropDown.value
+                // alert(option)
+
+                if (num != '') {
+                    if (option == 'Fibonacci'){
+                        // alert("fib")
+                        result.innerHTML =  numFib(num);
+                    }
+                    else if(option == 'Palindrome') {
+                        result.innerHTML = numPal(num);
+                    }
+                    else if(option == 'Armstrong'){
+                        result.innerHTML =  numArm(num);
+                    }
+                }
+                else {
+                    alert("Enter the Value")
+                }
+                function numFib(num) {
+                    let fib = [0, 1];
+                    for (let i = 2; i < num; i++) {
+                        fib[i] = fib[i - 1] + fib[i - 2];
+                    }
+                    return `Fibonacci Series: ${fib.slice(0, num).join(", ")}`;
+                  
+                }
+                function numPal(num){
+                    let temp = num.toString().split("").reverse().join("");
+                    if(num === temp){
+                        return  `${num} is Palindrome`
+                    }
+                    else{
+                        return `${num} is not  Palindrome`
+
+                    }
+                }
+                function numArm(num){
+                    
+                }
+            }
         </script>
 </body>
 
