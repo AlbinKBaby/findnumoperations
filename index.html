@@ -40,15 +40,15 @@
                 // alert(option)
 
                 if (num != '') {
-                    if (option == 'Fibonacci'){
+                    if (option == 'Fibonacci') {
                         // alert("fib")
-                        result.innerHTML =  numFib(num);
+                        result.innerHTML = numFib(num);
                     }
-                    else if(option == 'Palindrome') {
+                    else if (option == 'Palindrome') {
                         result.innerHTML = numPal(num);
                     }
-                    else if(option == 'Armstrong'){
-                        result.innerHTML =  numArm(num);
+                    else if (option == 'Armstrong') {
+                        result.innerHTML = numArm(num);
                     }
                 }
                 else {
@@ -60,20 +60,37 @@
                         fib[i] = fib[i - 1] + fib[i - 2];
                     }
                     return `Fibonacci Series: ${fib.slice(0, num).join(", ")}`;
-                  
+
                 }
-                function numPal(num){
-                    let temp = num.toString().split("").reverse().join("");
-                    if(num === temp){
-                        return  `${num} is Palindrome`
+                function numPal(num) {
+                    let tempPal = num.toString().split("").reverse().join("");
+                    if (num === tempPal) {
+                        return `${num} is Palindrome`
                     }
-                    else{
+                    else {
                         return `${num} is not  Palindrome`
 
                     }
                 }
-                function numArm(num){
-                    
+                function numArm(num) {
+
+                    let sum = 0;
+                    let tempArm = num;
+                    while (tempArm > 0) {
+                        let n = tempArm % 10;
+                        let rev = Math.pow(num, 3);
+                        sum = sum + rev;
+                    }
+                    if (sum === num) {
+                        alert("hi")
+                        // return  `${num} is Armstrong`
+                    }
+                    else {
+                        alert("hlo")
+                        // return `${num} is not  Armstrong`
+
+                    }
+
                 }
             }
         </script>
